@@ -264,6 +264,9 @@
   color: #808080;
   cursor: pointer;
 }
+.service__left ul li {
+  transition: all 0.3s ease; /* Thêm transition cho tất cả các thuộc tính với duration 0.3s và hiệu ứng ease */
+}
 .service__left ul li span {
   position: relative;
   font-size: 15px;
@@ -274,6 +277,11 @@
 }
 .service__left ul li span.no {
   display: none;
+}
+.service__left ul li.focus {
+  color: black;
+  border-bottom: solid 2px black;
+  transform: translateX(-5%);
 }
 .service__right img {
   width: 100%;

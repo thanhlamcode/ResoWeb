@@ -330,6 +330,7 @@ $text-color: #757575;
             }
 
             li{
+                transition: all 0.3s ease; /* Thêm transition cho tất cả các thuộc tính với duration 0.3s và hiệu ứng ease */
                 span{
                     position: relative;
                     font-size: 15px;
@@ -340,6 +341,11 @@ $text-color: #757575;
                     &.no{
                         display: none;
                     }
+                }
+                &.focus{
+                    color: black;
+                    border-bottom: solid 2px black;
+                    transform: translateX(-5%);
                 }
             }
         }
