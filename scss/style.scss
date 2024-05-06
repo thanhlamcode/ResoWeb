@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+/* Định nghĩa keyframes cho animation bounceInUp */
+@keyframes bounceInUp {
+    50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+// animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+
+.btns{
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: box-shadow 0.3s ease; // Thêm transition để hiệu ứng mềm mại
+}
+
+/* HEADER */
+.header {
+
+      &__nav{
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 85px;
+        position: fixed;
+        &.scrolling {
+            background-color: #fff; /* Background màu trắng */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm shadow khi cuộn xuống */
+        }
+        &--logo{
+            & img {
+                vertical-align: middle;
+                border-style: none;
+                height: 40px;
+                margin-left: 32px;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        &--multi {
+            height: 100%;
+
+            & ul{
+                list-style-type: none;
+                display: flex;
+                height: 100%;
+                & li{
+                    display: inline-flex;
+                    align-items: center;
+                    width: 98px;
+                    /* text-align: center; */
+                    justify-content: center;
+                    & i{
+                        margin-left: 7px;
+                    }
+                    &:hover{
+                        background-color: #F2F2F2;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &--language{
+            display: flex;
+
+            & div{
+                margin-right: 10px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+      }
+  }
+
+  /* END HEADER */
+
+
+// SECTION CONTENT
+
+.content{
+    background-image: url("/img/section-bg-1.jpg"); /* Đường dẫn hình ảnh */
+    background-size: cover; /* Chỉnh kích thước ảnh */
+    position: relative;
+    display: flex; /* Hiển thị phần tử chính dạng block */
+    font-weight: 500;
+    height: 100vh;
+    position: relative;
+    padding-top: 140px;
+
+    &::before{
+        content: ""; /* Thêm nội dung để hiển thị phần tử */
+        background: rgba(252, 252, 252, .9);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Chiều rộng bằng phần tử cha */
+        height: 100%; /* Chiều cao bằng phần tử cha */
+    }
+    &__left{
+        & h7{
+            color: #909090;
+        }
+
+        & h2{
+            font-size: 60px;
+        }
+        & p{
+            color: #909090;
+            font-size: 20px;
+        }
+        & .button{
+            margin-top: 30px;
+            & .btn1{
+                &:hover {
+                    color: black;
+                    background-color: #EFEFEF;
+                    transform: translateY(-3px);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+            }
+            & .btn2{
+                background-color: rgba(0, 0, 0, 0.0);
+                color: black;
+                &:hover{
+                    animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+                }
+            }
+        }
+    }
+    &__right{
+        position: relative;
+        & img{
+            width: 184px;
+            height: 245px;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        &--picture-1{
+            position: absolute;
+            top: 200px;
+            left: 100px;
+        }
+        &--picture-2{
+            position: absolute;
+            top: 125px;
+            left: 235px;
+        }
+        &--picture-3{
+            position: absolute;
+            top: 50px;
+            right: 195px;
+        }
+    }
+}
+
+// END SECTION CONTENT
+
+// STORY
+
+.story{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    &__img{
+        &--our{
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        &--title{
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        &--img{
+            width: 100%;
+        }
+        &--rely{
+            position: absolute;
+            bottom: -71px;
+            left: -88px;
+        }
+    }
+
+    &__content{
+        &--button{
+            position: absolute;
+            right: 0;
+            font-size: 30px;
+            cursor: pointer;
+            border-bottom: solid 2px black;
+            /* Thiết lập các thuộc tính CSS cơ bản */
+            // transition: transform 0.3s ease;
+
+            &:hover{
+                animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+            }
+        }
+        &--miss{
+            padding-top: 70px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        &--miss1, &--vision1{
+            color: #7F7F7F;
+            font-size: 18px;
+        }
+        &--vision{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// END STORY
