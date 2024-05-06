@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+@mixin hoverEffect {
+    transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+}
+
+//Sử dụng mixin 
+// .element {
+//     @include hoverEffect;
+// }
+
+
 *{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
 }
-
-/* Định nghĩa keyframes cho animation bounceInUp */
-@keyframes bounceInUp {
-    50% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-// animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
 
 .btns{
     padding: 20px 40px;
@@ -86,7 +87,7 @@
 
             & div{
                 margin-right: 10px;
-
+                @include hoverEffect();
                 &:hover{
                     cursor: pointer;
                 }
@@ -95,7 +96,7 @@
       }
   }
 
-  /* END HEADER */
+/* END HEADER */
 
 
 // SECTION CONTENT
@@ -144,8 +145,10 @@
             & .btn2{
                 background-color: rgba(0, 0, 0, 0.0);
                 color: black;
-                &:hover{
-                    animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+                transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+                &:hover {
+                cursor: pointer;
+                transform: translateY(-20px) scale(1.1);
                 }
             }
         }
@@ -203,7 +206,12 @@
             position: absolute;
             bottom: -71px;
             left: -88px;
-        }
+            transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-5px) translateX(40px) scale(1.1);
+            }
+        }       
     }
 
     &__content{
@@ -214,10 +222,10 @@
             cursor: pointer;
             border-bottom: solid 2px black;
             /* Thiết lập các thuộc tính CSS cơ bản */
-            // transition: transform 0.3s ease;
+            transition: transform 0.3s ease-in-out;
 
             &:hover{
-                animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+                transform: scale(1.1);
             }
         }
         &--miss{
@@ -236,3 +244,54 @@
 }
 
 // END STORY
+
+// DEVELOPER
+
+.developer{
+    padding: 140px 0;
+    background-color: #F1F1F1;
+
+
+
+    &__left{
+        position: relative;
+
+        & h1{
+            border-bottom: solid 2px black;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        & i {
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 7px;
+            left: -48px;
+        }
+
+        & h5 {
+            color: #919191;
+        }
+    }
+
+    &__right{
+        & img{
+            height: 300px;
+            object-fit: contain;
+        }
+
+        & i {
+            color: red;
+            font-size: 47px;
+            transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+            &:hover {
+                font-size: 90px;
+            }
+        }
+        
+    }
+}
+
+// END DEVELOPER

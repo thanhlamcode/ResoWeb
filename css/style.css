@@ -7,16 +7,6 @@
   font-style: normal;
 }
 
-/* Định nghĩa keyframes cho animation bounceInUp */
-@keyframes bounceInUp {
-  50% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .btns {
   padding: 20px 40px;
   background-color: black;
@@ -77,6 +67,11 @@
 }
 .header__nav--language div {
   margin-right: 10px;
+  transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+}
+.header__nav--language div:hover {
+  cursor: pointer;
+  transform: scale(1.5);
 }
 .header__nav--language div:hover {
   cursor: pointer;
@@ -124,9 +119,11 @@
 .content__left .button .btn2 {
   background-color: rgba(0, 0, 0, 0);
   color: black;
+  transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
 }
 .content__left .button .btn2:hover {
-  animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+  cursor: pointer;
+  transform: translateY(-20px) scale(1.1);
 }
 .content__right {
   position: relative;
@@ -175,6 +172,11 @@
   position: absolute;
   bottom: -71px;
   left: -88px;
+  transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+}
+.story__img--rely:hover {
+  cursor: pointer;
+  transform: translateY(-5px) translateX(40px) scale(1.1);
 }
 .story__content--button {
   position: absolute;
@@ -183,9 +185,10 @@
   cursor: pointer;
   border-bottom: solid 2px black;
   /* Thiết lập các thuộc tính CSS cơ bản */
+  transition: transform 0.3s ease-in-out;
 }
 .story__content--button:hover {
-  animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Áp dụng animation khi hover */
+  transform: scale(1.1);
 }
 .story__content--miss {
   padding-top: 70px;
@@ -198,6 +201,42 @@
 }
 .story__content--vision {
   margin-bottom: 20px;
+}
+
+.developer {
+  padding: 140px 0;
+  background-color: #F1F1F1;
+}
+.developer__left {
+  position: relative;
+}
+.developer__left h1 {
+  border-bottom: solid 2px black;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+.developer__left i {
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: -48px;
+}
+.developer__left h5 {
+  color: #919191;
+}
+.developer__right img {
+  height: 300px;
+  object-fit: contain;
+}
+.developer__right i {
+  color: red;
+  font-size: 47px;
+  transition: all 0.3s ease; /* Thêm transition cho mọi thuộc tính thay đổi */
+}
+.developer__right i:hover {
+  font-size: 90px;
 }
 
 /*# sourceMappingURL=style.css.map */
