@@ -548,11 +548,10 @@ $text-color: #757575;
         padding-top: 50px;
         &--item{
             display: none;
-
+            
             &.display{
                 display: block;
             }
-
             .inner-image{
                 margin-bottom: 30px;
                 transition: all 2s ease;
